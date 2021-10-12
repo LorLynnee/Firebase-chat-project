@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import './App.css';
+import configData from "./firebase-config.json";
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -9,15 +10,7 @@ import 'firebase/analytics';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-firebase.initializeApp({
-  apiKey: "AIzaSyDzPO5kqGr1ac05j1wnpjaYrnahFwXTdCY",
-  authDomain: "chatme-18760.firebaseapp.com",
-  projectId: "chatme-18760",
-  storageBucket: "chatme-18760.appspot.com",
-  messagingSenderId: "527973627677",
-  appId: "1:527973627677:web:f910475a5542d2dee313f4",
-  measurementId: "G-6RBX9NKF5E"
-})
+firebase.initializeApp(configData);
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
